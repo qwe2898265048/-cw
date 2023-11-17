@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>视频欣赏</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+			background-color:#000;
+        }
+
+        #video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video id="video" controls autoplay></video>
+    </div>
+
+    <script>
+        var videos = ["video/1.mp4", "video/2.mp4", "video/3.mp4","video/4.mp4","video/5.mp4"]; // 替换为多个视频文件的路径
+
+        var videoElement = document.getElementById("video");
+        var currentVideoIndex = 0;
+
+        videoElement.src = videos[currentVideoIndex];
+
+        videoElement.addEventListener("ended", function() {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            videoElement.src = videos[currentVideoIndex];
+            videoElement.play();
+        });
+    </script>
+</body>
+</html>

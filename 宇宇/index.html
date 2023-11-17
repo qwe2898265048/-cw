@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <title>网页1</title>
+  <style>
+    body {
+      color:#FFF;
+      text-align: center;
+      background-size:contain; /* 添加的代码 */
+      padding-top:10px;
+      margin: 10px;
+    }
+    nav {
+       background-color:#D6D3F5;
+	color:#666;
+	padding:10px 0;
+	text-align:center;
+	position:fixed;
+	top:0;
+	left:0;
+	font-size:20px;
+	width:100%;
+	z-index:999;
+	font-sizpx;
+    }
+    nav li {
+      display: inline-block;
+    }
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+           }
+       nav a{
+            text-decoration: none;
+            color: #FFFFFF;
+            }
+ nav a:hover{
+            color: #74E8FF;
+            font-weight: bold;
+            background-color:#0CF;
+            }
+			main h1{ font-size:80px;
+			text-align:center;
+			padding-top:10px auto;}
+			main h2{ font-size:60px;
+			text-align:center;}
+  </style>
+</head> 
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="sy.html">首页</a></li>
+        <li><a href="yy.html">音乐</a></li>
+        <li><a href="">其他</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>宇宇设计</h1>
+    <h2>欢迎来到我的网页</h2>
+  </main>
+  <footer>
+    <p>本网页由宇宇设计©版权所有，如有雷同请私信我的邮箱：2898265048@qq.com</p>
+  </footer>
+
+  <script>
+    var images = ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/5.jpg", "img/6.jpg", "img/7.jpg", "img/8.jpg", "img/9.jpg", "img/10.jpg",
+    "img/11.jpg", "img/12.jpg", "img/13.jpg", "img/14.jpg", "img/15.jpg", "img/16.jpg", "img/17.jpg", "img/18.jpg", "img/19.jpg", "img/20.jpg", "img/21.jpg",
+    "img/22.jpg", "img/23.jpg", "img/24.jpg",];  // 背景图片数组
+    var currentIndex = 0;  // 当前显示的图片索引
+
+    function changeBackground() {
+      document.body.style.backgroundImage = "url('" + images[currentIndex] + "')";  // 设置背景图片
+
+      currentIndex = (currentIndex + 1) % images.length;  // 切换到下一张图片
+
+      setTimeout(changeBackground, 10000);  // 每隔5秒切换一次背景图
+    }
+
+    changeBackground();  // 开始自动切换背景图片
+  </script>
+</body>
+</html>
